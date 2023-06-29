@@ -53,7 +53,7 @@
   margin-top:16px;
 }
 </style>
-
+{% if user.is_authenticated %}
 <body>
 <br>
     <div class="container my-3" style="background-color: rgb(126, 173, 254)" style="margin-top: 400px;">
@@ -127,9 +127,9 @@
                             <thead>
                                 <tr>
                                     <th style="width:5%;">ID</th>
-                                    <th style="width:40%;">Banner Promoción</th>
+                                    <th style="width:40%;">Nombre</th>
                                     <th style="width:40%;">Descripción</th>
-                                    <th style="width:10%;">Fecha</th>
+                                    <th style="width:10%;">Stock</th>
                                     <!-- <th style="width:10%;">Opciones</th> -->
 
                                 </tr>
@@ -137,9 +137,9 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Promoción taller yoga</td>
-                                    <td>2x1</td>
-                                    <td>31/12/2022</td>
+                                    <td>desfibrilador externo automatico</td>
+                                    <td>Hemos diseñado el DEA Powerheart G3 Elite con avisos de voz Rescue Coach™ para ayudar a los rescatistas durante el proceso de reanimación, las compresiones, </td>
+                                    <td>30</td>
                                     <!-- <td>
                                         <button class="btn btn-sm btn-primary"><i
                                                 class="fa-solid fa-pencil"></i></button>
@@ -182,6 +182,10 @@
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
         crossorigin="anonymous"></script>
 </body>
+{% else %}
+    <img src="{%static 'core/img/Desfibriladores.png'%}" alt="">
+    {% include 'Footer.html'%}
+{% endif %}
 
     <!-- Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

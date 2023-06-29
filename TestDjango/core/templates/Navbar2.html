@@ -23,8 +23,10 @@
           <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">MENU</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
+        
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="{% url 'home' %}">Dashboard</a>
             </li>
@@ -37,7 +39,7 @@
              <li class="nav-item">
               <a class="nav-link" href="{% url 'HistoricoSolicitud' %}">Histórico de solicitudes</a>
             </li>
-            {% if user.is_authenticated %}
+            
             <li class="nav-item">
               <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-user-circle"></i> {{user.username}}, cerrar sesión</a>
             </li>
