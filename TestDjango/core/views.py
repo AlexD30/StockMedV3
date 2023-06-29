@@ -82,8 +82,16 @@ def Admin_General(request):
 def Admin_sectores(request):
     sector = Sector.objects.all()
     datos = {
-        'sector': sector
+        'sector': sector,
+        'form': SectorForm()
     }
+    if request.method == 'POST':
+        formmulario = SectorForm(request.POST)
+        if formmulario.is_valid:
+            formmulario.save()
+            messages.success(request, "Sector registrado correctamente")
+            datos['mensaje'] = "Guardados Correctamente"
+            return redirect(to="Admin_sectores")
     return render(request, 'core/Admin_sectores.html',datos)
 
 
@@ -388,3 +396,13 @@ def Modificar_sector(request, id):
             'mensaje': "Modificado correctamente"
         }
     return render(request, 'core/Modificar_sector.html', datos)
+
+def Eliminar_sector(request, id):
+    sector = Sector.objects.get(idSector=id)
+    sector.delete()
+    sector = Sector.objects.all()
+    messages.success(request, "Sector eliminado correctamente")
+    datos = {
+        'sector': sector
+    }
+    return render(request, 'core/Admin_sectores.html', datos)
