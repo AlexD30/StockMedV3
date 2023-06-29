@@ -20,7 +20,7 @@
   <!-- TITULO -->
   <div class="container my-4">
     <div class=" rounded container-fluid  text-black pd-2" style="background-color: rgb(126, 173, 254)" style="margin-top: 400px;">
-      <p class="text-md-center text-light fs-3">Modificar Producto</p>
+      <p class="text-md-center text-light fs-3">Modificar Sector</p>
     </div>
   </div>
   <!-- FIN TITULO -->
@@ -49,26 +49,14 @@
         {{mensaje}}
         <br><br><br>
         <div class="d-grid gap-2">
-          <a href="{%url 'Admin_General'%}" class="btn btn-primary" role="button" data-bs-toggle="button"
-            aria-pressed="true"><h5>Volver a Lista de Producto</h5></i> </a>
+          <a href="{%url 'Admin_sectores'%}" class="btn btn-primary" role="button" data-bs-toggle="button"
+            aria-pressed="true"><h5>Volver a Lista de Sectores</h5></i> </a>
         </div>
       </div>
     </div>
   </div>
 </body>
 
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        {% if messages %}
-            {% for m in messages %}
-                <script>
-                        Swal.fire({
-                            "title": "Felicitaciones",
-                            "text": "{{m}}",
-                            "icon": "success"
-                            })
-                </script>
-            {% endfor %}
-        {% endif %}
 <!-- FIN FORMULARIO -->
 <!-- Footer -->
 {% include 'Footer.html'%}

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Material, PostulacionInstr
+from .models import Material, PostulacionInstr, Sector,Solicitud
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
@@ -12,6 +12,11 @@ class MaterialForm (forms.ModelForm):
     def clean(self):
         print(self.cleaned_data)
         return self.cleaned_data
+    
+class SectorForm (forms.ModelForm):
+    class Meta:
+        model = Sector
+        fields = ("idSector","nombre","descripcionSector","sucursal")
 
 
 

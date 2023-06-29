@@ -1,5 +1,5 @@
 from django.urls import path
-from.views import Admin_General,Registro_Cuenta_Admin, Registro_Cuenta_Instructor,Admin_Taller, AceptarPostulacion,EvaluarPostulacion,registro,crear_Taller, home, Form_Inscripcion_Taller, Form_Instructor_Taller,Ins_Taller,Form_Evaluacion,crear_Material, Admin_Perfil, Admin_Muni, Admin_Postulacion, Admin_Pago, Admin_Cliente,Admin_Banner_Promocion,Admin_Instructor, Tus_Talleres,Modificar_Material,Eliminar_Material,Validar_Postulacion, Ver_Material, Admin_sectores, crear_sector, HistoricoSolicitud
+from.views import Admin_General,Registro_Cuenta_Admin, Registro_Cuenta_Instructor,Admin_Taller, Modificar_sector,Ver_sector,AceptarPostulacion,EvaluarPostulacion,registro,crear_Taller, home, Form_Inscripcion_Taller, Form_Instructor_Taller,Ins_Taller,Form_Evaluacion,crear_Material, Admin_Perfil, Admin_Muni, Admin_Postulacion, Admin_Pago, Admin_Cliente,Admin_Banner_Promocion,Admin_Instructor, Tus_Talleres,Modificar_Material,Eliminar_Material,Validar_Postulacion, Ver_Material, Admin_sectores, crear_sector, HistoricoSolicitud
 
 urlpatterns = [
     path('', home, name="home"),
@@ -31,7 +31,10 @@ urlpatterns = [
     path('AceptarPostulacion/<id>/', AceptarPostulacion,name="AceptarPostulacion"),
     path('Ver_Material/<id>/', Ver_Material,name="Ver_Material"),
     path('Registro_Cuenta_Admin',Registro_Cuenta_Admin, name="Registro_Cuenta_Admin"),
-    path('Registro_Cuenta_Instructor',Registro_Cuenta_Instructor, name="Registro_Cuenta_Instructor")
+    path('Registro_Cuenta_Instructor',Registro_Cuenta_Instructor, name="Registro_Cuenta_Instructor"),
+    path('Ver_sector/<id>/', Ver_sector,name="Ver_sector"),
+    path('Modificar_sector/<id>/', Modificar_sector, name="Modificar_sector"),
+
 
 
 

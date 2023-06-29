@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .form import MaterialForm, CustomerUserCreationForm, PostulacionInstrForm, CrearCuentaAdmin,CrearCuentaInstructor
+from .form import MaterialForm, CustomerUserCreationForm, PostulacionInstrForm, CrearCuentaAdmin,CrearCuentaInstructor, SectorForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.shortcuts import redirect, render
@@ -345,4 +345,38 @@ def Registro_Cuenta_Instructor(request):
             messages.success(request, "Cuenta creada correctamente")
             return redirect(to="home")
         data["form"] = formulario
-    return render(request, 'core/Registro_Cuenta_Instructor.html', data)   
+    return render(request, 'core/Registro_Cuenta_Instructor.html', data)
+
+def Ver_sector(request, id):
+    sector = Sector.objects.get(idSector=id)
+    datos = {
+        'form': SectorForm(instance=sector)
+    }
+    if request.method == 'POST':
+        formulario = SectorForm(data=request.POST, instance=sector)
+        if formulario.is_valid():
+            formulario.save()
+            # messages.success(request, "Producto modificado correctamente")
+            return redirect(to="Admin_sectores")
+        datos = {
+            'form': SectorForm(instance=sector),
+            'mensaje': "Modificado correctamente"
+        }
+    return render(request, 'core/Ver_sector.html',datos)
+
+def Modificar_sector(request, id):
+    sector = Sector.objects.get(idSector=id)
+    datos = {
+        'form': SectorForm(instance=sector)
+    }
+    if request.method == 'POST':
+        formulario = SectorForm(data=request.POST, instance=sector)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Sector modificado correctamente")
+            return redirect(to="Admin_sectores")
+        datos = {
+            'form': SectorForm(instance=sector),
+            'mensaje': "Modificado correctamente"
+        }
+    return render(request, 'core/Modificar_sector.html', datos)
