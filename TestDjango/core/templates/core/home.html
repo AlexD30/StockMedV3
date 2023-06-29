@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Stock</title>
+    <!-- css bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'core/css/Tarjetas.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- NAV -->
+    <div class="container-fluid " style="background-color: #cdd1c683">
+        {% block content %}
+        {% include 'Navbar2.html'%}
+        {% endblock %}
+    </div>
+
+    <!-- NAV FIN -->
+</head>
+
+<style>
+    .floatWapp{
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:20px;
+  right:20px;
+  background-color:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-floatWapp{
+  margin-top:16px;
+}
+</style>
+
+<body>
+<br>
+    <div class="container my-3" style="background-color: rgb(126, 173, 254)" style="margin-top: 400px;">
+        <p class="text-md-center text-light fs-3"> Pantalla de Indicadores</p>
+    </div>
+<br><br><br>
+    <div class="d-flex justify-content-start">
+        <div class="col-md-4 offset-md-1">
+            <div class="card" style="background-color: green;">
+                <h3 class="card-header"> <p style="text-align: center; color: #f9fff8;">Productos más utilizados</p> </h3>
+                <div class="card-body">
+                  <h5 class="card-title" style="text-align: center; color: #f9fff8;">Top 10</h5>
+                  <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                  <br>
+                  <center><a href="#" class="btn btn-primary">Ver elementos</a></center>
+                  
+                </div>
+              </div>
+        </div>  
+
+          <div class="col-md-4 offset-md-2"> 
+            <div class="card" style="background-color: red;">
+                <h3 class="card-header"> <p style="text-align: center; color: #f9fff8;">Stock</p> </h3>
+                <div class="card-body">
+                  <h5 class="card-title" style="text-align: center; color: #f9fff8;">Productos con Stock menor a 10 unidades</h5>
+                  <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                  <br>
+                  <center><a href="#" class="btn btn-primary">Ver elementos</a></center>
+                  
+                </div>
+              </div>
+          </div>
+
+    </div>
+
+
+
+    <a href="https://api.whatsapp.com/send?phone=56949052463&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Risi.cl." class="floatWapp" target="_blank">
+        <i class="fa-brands fa-whatsapp" style="color: #f9fff8;"></i>
+        </a>
+
+    
+
+    <!-- TARJETAS FIN -->
+    <!-- ----------------------- -->
+    <!-- Footer -->
+    {% include 'Footer.html'%}
+    <!-- Footer FIN-->
+    <!-- ----------------------- -->
+    <!-- MODAL-->
+
+    <!-- MODAL FIN-->
+
+    <!-- JS BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+{% if messages %}
+{% for m in messages %}
+<script>
+    Swal.fire({
+        "title": "Felicitaciones",
+        "text": "{{m}}",
+        "icon": "success"
+    })
+
+</script>
+{% endfor %}
+{% endif %}
+
+
+
+</html>
