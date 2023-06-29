@@ -80,12 +80,14 @@
         <p class="text-md-center text-light fs-3"> Lista de
             productos y repuestos</p>
     </div>
+    {% if user.is_superuser %}
     <div class="container">
         <div class="right">
             <button class="btn btn-sm btn-success" button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AgregarEst">
                 Agregar Producto</button>
         </div>
     </div>
+    {% endif %}
     <br>
     <!-- FIN BOTON AGREGAR TALLER ----------------------- -->
     <!-- TABLA -->
@@ -104,8 +106,10 @@
                                     <!-- <th style="width:5%;">Acciones</th> -->
                                     <th style="width:15%;">Ver elemento</th>
                                     <!-- <th style="width:5%;">Aceptar</th> -->
+                                    {% if user.is_superuser %}
                                     <th style="width:5%;">Eliminar</th>
                                     <th style="width:5%;">Editar</th>
+                                    {% endif %}
                                 </tr>
                             </thead>
                             <tbody>
@@ -126,6 +130,7 @@
                                                 
                                             </div>
                                         </td>
+                                        {% if user.is_superuser %}
                                         <td>
                                             <div class="d-flex justify-content-center">
                                             <button class="btn btn-sm btn-danger">
@@ -146,6 +151,7 @@
                                             </button>
                                             </div>
                                         </td>
+                                        {% endif %}
 
                                     </td>
                                 </tr>
