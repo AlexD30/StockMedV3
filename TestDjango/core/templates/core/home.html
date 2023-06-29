@@ -108,7 +108,7 @@
         </a>
 
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -130,7 +130,7 @@
                                     <th style="width:40%;">Banner Promoción</th>
                                     <th style="width:40%;">Descripción</th>
                                     <th style="width:10%;">Fecha</th>
-                                    <th style="width:10%;">Opciones</th>
+                                    <!-- <th style="width:10%;">Opciones</th> -->
 
                                 </tr>
                             </thead>
@@ -140,12 +140,12 @@
                                     <td>Promoción taller yoga</td>
                                     <td>2x1</td>
                                     <td>31/12/2022</td>
-                                    <td>
+                                    <!-- <td>
                                         <button class="btn btn-sm btn-primary"><i
                                                 class="fa-solid fa-pencil"></i></button>
                                         <button class="btn btn-sm btn-danger"><i
                                                 class="fa-solid fa-trash-can"></i></button>
-                                    </td>
+                                    </td> -->
                                 </tr>
                             </tbody>
                         </table>
@@ -157,8 +157,8 @@
     <!-- TABLE FIN-->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>
     </div>
@@ -213,19 +213,19 @@
             ],
             dom: 'Bfrtip',
             buttons: [
-                'copy',
-                'csv',
+                // 'copy',
+                // 'csv',
                 'excel',
                 'pdf',
-                {
-                    extend: 'print',
-                    text: 'Imprimir pantalla',
-                    exportOptions: {
-                        modifier: {
-                            selected: null
-                        }
-                    }
-                }
+                // {
+                //     extend: 'print',
+                //     text: 'Imprimir pantalla',
+                //     exportOptions: {
+                //         modifier: {
+                //             selected: null
+                //         }
+                //     }
+                // }
             ],
             select: false,
             pageLength: 5,
