@@ -199,7 +199,7 @@ def Eliminar_Material(request, id):
     datos = {
         'material': material
     }
-    return render(request, 'core/Admin_General.html', datos)
+    return redirect(to="Admin_General")
 
 
 def EvaluarPostulacion(request, id):
@@ -405,4 +405,4 @@ def Eliminar_sector(request, id):
     datos = {
         'sector': sector
     }
-    return render(request, 'core/Admin_sectores.html', datos)
+    return redirect(to="Admin_sectores")
