@@ -66,8 +66,16 @@ def Form_Evaluacion(request):
 def Admin_General(request):
     material = Material.objects.all()
     datos = {
-        'material': material
+        'material': material,
+        'form' : MaterialForm()
     }
+    if request.method == 'POST':
+        formmulario = MaterialForm(request.POST)
+        if formmulario.is_valid:
+            formmulario.save()
+            messages.success(request, "Producto registrado correctamente")
+            datos['mensaje'] = "Guardados Correctamente"
+            return redirect(to="Admin_General")
     return render(request, 'core/Admin_General.html', datos)
 
 
