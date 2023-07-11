@@ -122,9 +122,14 @@
                                     <td>
                                         <div class="d-flex justify-content-center">
                                                 
-                                            <a >
-                                                <i class="fa-solid fa-circle-xmark fa-2xl" style="color: #d3121c;"></i>
+                                            <a>
+                                                {% if mt.stock == 0 %}
+                                                <i class="fa-solid fa-circle-xmark fa-2xl" style="color: #ea252f;"></i>
+                                                {% elif 10 > mt.stock and mt.stock > 0 %}
+                                                <i class="fa-solid fa-exclamation-circle fa-2xl" style="color: #fff30a;"></i>
+                                                {%else %}
                                                 <i class="fa-solid fa-circle-check fa-2xl" style="color: #78d719;"></i>
+                                                {% endif %}
                                             </a>
                                             
                                         </div>
