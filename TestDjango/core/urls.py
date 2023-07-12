@@ -1,5 +1,5 @@
 from django.urls import path
-from.views import Admin_General,Registro_Cuenta_Admin, limpiarListado,agregar_producto,Registro_Cuenta_Instructor,Admin_Taller, Eliminar_sector,Modificar_sector,Ver_sector,AceptarPostulacion,EvaluarPostulacion,registro,crear_Taller, home, Form_Inscripcion_Taller, Form_Instructor_Taller,Ins_Taller,Form_Evaluacion,crear_Material, Admin_Perfil, Admin_Muni, Admin_Postulacion, Admin_Pago, Admin_Cliente,Admin_Banner_Promocion,Admin_Instructor, Tus_Talleres,Modificar_Material,Eliminar_Material,Validar_Postulacion, Ver_Material, Admin_sectores, crear_sector, HistoricoSolicitud
+from.views import Admin_General,Registro_Cuenta_Admin, Ver_solicitud,limpiarListado,agregar_producto,Registro_Cuenta_Instructor,Admin_Taller, Eliminar_sector,Modificar_sector,Ver_sector,AceptarPostulacion,EvaluarPostulacion,registro,crear_Taller, home, Form_Inscripcion_Taller, Form_Instructor_Taller,Ins_Taller,Form_Evaluacion,crear_Material, Admin_Perfil, Admin_Muni, Admin_Postulacion, Admin_Pago, Admin_Cliente,Admin_Banner_Promocion,Admin_Instructor, Tus_Talleres,Modificar_Material,Eliminar_Material,Validar_Postulacion, Ver_Material, Admin_sectores, crear_sector, HistoricoSolicitud
 
 urlpatterns = [
     path('', home, name="home"),
@@ -37,6 +37,7 @@ urlpatterns = [
     path('Eliminar_sector/<id>/',Eliminar_sector, name="Eliminar_sector"),
     path('agregar_producto/<producto_id>/', agregar_producto, name="Add"),
     path('limpiarListado', limpiarListado, name="limpiarListado"),
+    path('Ver_solicitud', Ver_solicitud,name="Ver_solicitud"),
 
 
 

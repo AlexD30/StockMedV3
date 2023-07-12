@@ -422,3 +422,9 @@ def limpiarListado(request):
     listaSolicitud.clear()
     print(listaSolicitud)
     return redirect(to="Admin_General")
+
+def Ver_solicitud(request):
+    datos = {
+        'solicitud': listaSolicitud
+    }
+    return render(request, 'core/Ver_solicitud.html',datos)
