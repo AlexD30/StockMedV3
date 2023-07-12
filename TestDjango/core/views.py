@@ -9,6 +9,9 @@ from core.models import Material, PostulacionInstr, Sector , Solicitud
 # Create your views here.
 
 
+cantidad = []
+listaSolicitud = []
+
 def home(request):
     return render(request, 'core/home.html')
 
@@ -67,7 +70,8 @@ def Admin_General(request):
     material = Material.objects.all()
     datos = {
         'material': material,
-        'form' : MaterialForm()
+        'form' : MaterialForm(),
+        'listaSolicitud' : listaSolicitud
     }
     if request.method == 'POST':
         formmulario = MaterialForm(request.POST)
@@ -406,3 +410,15 @@ def Eliminar_sector(request, id):
         'sector': sector
     }
     return redirect(to="Admin_sectores")
+
+
+def agregar_producto(request, producto_id):
+    producto = Material.objects.get(idMaterial = producto_id)
+    listaSolicitud.append(producto)
+    print(producto.descripcionMaterial)
+    return redirect("Admin_General")
+
+def limpiarListado(request):
+    listaSolicitud.clear()
+    print(listaSolicitud)
+    return redirect(to="Admin_General")
