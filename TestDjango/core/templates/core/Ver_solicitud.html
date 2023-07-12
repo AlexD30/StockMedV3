@@ -71,17 +71,9 @@
     <br> <br><br>
 
     <div class="container my-3" style="background-color: rgb(126, 173, 254)" style="margin-top: 400px;">
-        <p class="text-md-center text-light fs-3"> Lista de
-            Sectores</p>
+        <p class="text-md-center text-light fs-3"> Listado de solicitud de productos</p>
     </div>
-    {% if user.is_superuser %}
-    <div class="container">
-        <div class="right">
-            <button class="btn btn-sm btn-success" button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AgregarEst">
-                Agregar Sector</button>
-        </div>
-    </div>
-    {% endif %}
+
     <br>
     <!-- FIN BOTON AGREGAR TALLER ----------------------- -->
     <!-- TABLA -->
@@ -110,6 +102,11 @@
                             {% endfor %}
                             </tbody>
                         </table>
+                        <center>
+                        <div class="col-8">
+                            <a href="{% url 'ingresarSolictud' %}" class="btn btn-success">Ingresar solicitud</a>
+                          </div>
+                        </center>
                     </div>
                 </div>
             </div>
@@ -125,21 +122,6 @@
     {% include 'Footer.html'%}
     <!-- Footer FIN-->
     <!-- ----------------------- -->
-    <!-- --MODAL--------->
-    <div tabindex="-1" aria-labelledby="modal1" aria-hidden="true" class="modal fade" id="modal1">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="card mb-3">
-                <img src="{% static 'core/img/adulto-mayor-3.jpeg'%}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title text-md-center">Taller de Yoga</h5>
-                    <p class="card-text">El yoga es una práctica que conecta el cuerpo, la respiración y la mente. Esta
-                        práctica utiliza posturas físicas, ejercicios de respiración y meditación para mejorar la salud
-                        general. El yoga se desarrolló como una práctica espiritual hace miles de años.</p>
-                    <p class="card-text"><small class="text-muted">Instructor Juanito Pérez</small></p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

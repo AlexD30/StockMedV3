@@ -425,6 +425,14 @@ def limpiarListado(request):
 
 def Ver_solicitud(request):
     datos = {
-        'solicitud': listaSolicitud
+        'listaSolicitud': listaSolicitud
     }
     return render(request, 'core/Ver_solicitud.html',datos)
+
+def ingresarSolictud(request):
+    material = Material.objects.all()
+    datos = {
+        'material': material}
+    messages.success(request, "Solictud ingresada correctamente")
+    listaSolicitud.clear()
+    return render(request, 'core/Admin_General.html',datos)
